@@ -4,6 +4,8 @@
 load {cicname}.raw
 
 echo "MEAS_START"
-
+meas tran i1 find i(I1) at=10n
+meas tran i2 find i(I2) at=10n
+meas tran v_i1 find v(I1) at=10n
 echo "MEAS_END"
 .endc
