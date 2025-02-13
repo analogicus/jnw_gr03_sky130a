@@ -17,7 +17,7 @@ test:
 	${MAKE} typical OPT="Debug"
 
 tempsweep: netlist
-	cicsim run --replace replace.yaml --name ${VIEW}_tempsweep ${TB} ${OPT} ${VIEW} Gt Ktt Tt Vt Temperaturesweep
+	cicsim run --replace listoftemps.yaml --name ${VIEW}_tempsweep ${TB} ${OPT} ${VIEW} Gt Ktt Tt Vt Temperaturesweep
 
 typical: netlist
 	cicsim run --name ${VIEW}_typical ${TB} ${OPT} ${VIEW} Gt Ktt Tt Vt
