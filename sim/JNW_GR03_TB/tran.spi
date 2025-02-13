@@ -24,7 +24,8 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
+VDD  VDD  VSS  dc 1.8
+VSENS I_TEMP 0 dc 0.5
 
 *-----------------------------------------------------------------
 * DUT
@@ -34,7 +35,7 @@ VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
 *----------------------------------------------------------------
 * PROBE
 *----------------------------------------------------------------
-.save all
+.save i(VSENS)
 
 
 *----------------------------------------------------------------
@@ -49,8 +50,21 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-tran 1n 10n 1p
-write
+set fend = .raw
+
+#ifdef Temperaturesweep
+    foreach vtemp {temp_sweep}
+        option temp=$vtemp
+        tran 1p 100n 0.1p
+        write {cicname}_$vtemp$fend
+    end
+#else
+    option temp=27
+    tran 10p 10n 1p
+    write
+#endif
+
+
 quit
 
 
