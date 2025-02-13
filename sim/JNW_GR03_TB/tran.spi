@@ -52,17 +52,11 @@ optran 0 0 0 1n 1u 0
 
 set fend = .raw
 
-#ifdef Temperaturesweep
-    foreach vtemp {temp_sweep}
-        option temp=$vtemp
-        tran 500p 100u 50p
-        write {cicname}_$vtemp$fend
-    end
-#else
-    option temp=27
-    tran 10p 100n 1p
-    write
-#endif
+foreach vtemp -25 0 25 50 75 100
+    option temp=$vtemp
+    tran 1u 1000u 1u
+    write {cicname}_$vtemp$fend
+end
 
 
 quit
