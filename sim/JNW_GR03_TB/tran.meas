@@ -5,18 +5,14 @@ load {cicname}.raw
 
 echo "MEAS_START"
 
-#ifdef Temperaturesweep
-foreach vtemp {temp_sweep}
-#else
-*foreach vtemp 27
-foreach vtemp {temp_sweep}
-#endif
+foreach vtemp -25 0 25 50 75 100
+
     echo "LINE_SHIFT"
     echo "LINE_SHIFT"
     set fend = .raw
     load {cicname}_$vtemp$fend
 
-    meas tran i_temp$vtemp find i(VSENS) at=100u
+    meas tran i_temp$vtemp find i(VSENS) at=1000u
 
 end
 
