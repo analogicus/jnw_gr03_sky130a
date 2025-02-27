@@ -51,9 +51,9 @@ optran 0 0 0 1n 1u 0
 
 set fend = .raw
 
-foreach vtemp -25 0 25 50 75 100
+foreach vtemp -25 0 25 50 75 100 120
     option temp=$vtemp
-    tran 1u 1000u 1u
+    tran 1u 200u 1u
     write {cicname}_$vtemp$fend
 end
 
