@@ -1,0 +1,20 @@
+* Measure JNW_GR03_TB
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+foreach vtemp -25 0 25 50 75 100
+
+    echo "LINE_SHIFT"
+    echo "LINE_SHIFT"
+    set fend = .raw
+    load {cicname}_$vtemp$fend
+
+    meas tran i_temp$vtemp find i(VSENS) at=1000u
+
+end
+
+echo "MEAS_END"
+.endc
