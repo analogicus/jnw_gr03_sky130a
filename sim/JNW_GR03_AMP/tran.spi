@@ -10,11 +10,17 @@
 
 *-----------------------------------------------------------------
 * OPTIONS
+* TNOM=27: Sets the nominal temperature to 27°C.
+* GMIN=1e-15: Sets the minimum conductance to avoid floating nodes.
+* reltol=1e-3: Sets the relative tolerance for iterative solutions.
 *-----------------------------------------------------------------
 .option TNOM=27 GMIN=1e-15 reltol=1e-3
 
+
 *-----------------------------------------------------------------
 * PARAMETERS
+* TRF = 10p: Defines a parameter for rise/fall time.
+* AVDD: Defines a parameter for the supply voltage, which is set to {vdda}
 *-----------------------------------------------------------------
 .param TRF = 10p
 
@@ -24,8 +30,10 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
-
+VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}   
+* VDD_1V8 is the port name 
+VIN  VIN  0     SIN(0 0.1 1k)  ; Input signal
+VIP  VIP  0     dc 0 
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
@@ -34,7 +42,7 @@ VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
 *----------------------------------------------------------------
 * PROBE
 *----------------------------------------------------------------
-.save all
+.save i(VDD) v(VIN) v(VIP) v(VO)
 
 
 *----------------------------------------------------------------
@@ -49,7 +57,7 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-tran 1n 10n 1p
+tran 1n 10u
 write
 quit
 

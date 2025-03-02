@@ -4,6 +4,7 @@
 load {cicname}.raw
 
 echo "MEAS_START"
-
+meas tran vin_value find v(VIN) at=100n  ; Measure input voltage at 100 nanoseconds
+meas tran vout_value find v(VO) at=100n  ; Measure output voltage at 100 nanoseconds
 echo "MEAS_END"
 .endc

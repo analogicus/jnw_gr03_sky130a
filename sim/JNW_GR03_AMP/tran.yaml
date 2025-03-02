@@ -8,3 +8,25 @@
 #  scale: <scale, multiply result by scale>
 #  digits: <significant digits>
 #  unit: Unit
+
+vin_value:
+  src:
+    - vin_value
+  name: Input Voltage
+  typ: 0.1
+  min: 0.08
+  max: 0.12
+  scale: 1
+  digits: 3
+  unit: V
+
+vout_value:
+  src:
+    - vout_value
+  name: Output Voltage
+  typ: 1.8
+  min: 1.6
+  max: 2.0
+  scale: 1
+  digits: 3
+  unit: V
