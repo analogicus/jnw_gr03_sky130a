@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/JNW_GR03_DFLIPFLOP_R_lpe.spi
+.include ../../../work/lpe/JNW_GR03_NOT_lpe.spi
 #else
-.include ../../../work/xsch/JNW_GR03_DFLIPFLOP_R.spice
+.include ../../../work/xsch/JNW_GR03_NOT.spice
 #endif
 
 *-----------------------------------------------------------------
@@ -25,8 +25,8 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD  VSS   dc 1.8
-VCLK CLK  0     pulse (0.1 1.7 10n  2n 2n 60n  500n)
-VD   D    0     pulse (0.1 1.7 100n 2n 2n 600n 1.2u)
+VX   X    0     pulse(0.1 1.7 10n 2n 2n 60n 120n) 
+
 
 *-----------------------------------------------------------------
 * DUT
@@ -36,10 +36,9 @@ VD   D    0     pulse (0.1 1.7 100n 2n 2n 600n 1.2u)
 *----------------------------------------------------------------
 * PROBE
 *----------------------------------------------------------------
-.save v(CLK)
-.save v(D)
-.save v(Q)
-.save v(NOT_Q)
+.save v(X)
+.save v(Y)
+
 
 *----------------------------------------------------------------
 * NGSPICE control
@@ -53,7 +52,7 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-tran 1n 5u 1p
+tran 1n 500n 1p
 write
 quit
 
