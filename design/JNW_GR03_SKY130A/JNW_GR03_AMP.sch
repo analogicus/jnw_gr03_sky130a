@@ -113,4 +113,4 @@ C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 1300 290 0 1 {name=x1[1:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 1600 290 0 0 {name=x5[1:0]}
 C {JNW_TR_SKY130A/JNWTR_RPPO4.sym} 1260 560 1 0 {name=x9 }
 C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} 1260 400 1 0 {name=x12[0:1]}
-C {devices/ipin.sym} 2020 530 0 1 {name=VO lab=VO}
+C {devices/opin.sym} 2020 530 0 0 {name=VO lab=VO}

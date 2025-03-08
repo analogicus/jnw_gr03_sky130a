@@ -1,10 +1,10 @@
 ** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_AMP.sch
-.subckt JNW_GR03_AMP VDD VO VIP VIN VSS
+**.subckt JNW_GR03_AMP VDD VO VIP VIN VSS
 *.ipin VIN
 *.ipin VIP
 *.ipin VSS
 *.ipin VDD
-*.ipin VO
+*.opin VO
 x2 net2 VIN net1 net1 JNWATR_PCH_4C1F2
 x1 net3 VIP net1 net1 JNWATR_PCH_4C1F2
 x3 net3 net3 VSS VSS JNWATR_NCH_4C5F0
@@ -22,7 +22,7 @@ x5<0> net1 net5<0> VDD VDD JNWATR_PCH_4C5F0
 x9 VSS net6 VSS JNWTR_RPPO4
 x12<0> net6 net7<1> VSS JNWTR_RPPO2
 x12<1> net6 net7<0> VSS JNWTR_RPPO2
-.ends
+**.ends
 
 * expanding   symbol:  JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym # of pins=4
 ** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C1F2.sym
