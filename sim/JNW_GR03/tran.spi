@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/JNW_GR03_lpe.spi
+.include ../../../work/lpe/JNW_GR03_TB_lpe.spi
 #else
-.include ../../../work/xsch/JNW_GR03.spice
+.include ../../../work/xsch/JNW_GR03_TB.spice
 #endif
 
 *-----------------------------------------------------------------
@@ -24,7 +24,8 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
+VDD  VDD  VSS  dc 1.8
+VSENS I_TEMP 0 dc 0.5
 
 *-----------------------------------------------------------------
 * DUT
@@ -34,7 +35,7 @@ VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
 *----------------------------------------------------------------
 * PROBE
 *----------------------------------------------------------------
-.save all
+.save i(VSENS)
 
 
 *----------------------------------------------------------------
@@ -49,11 +50,19 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-tran 1n 10n 1p
-write
+set fend = .raw
+
+foreach vtemp -25 0 25 50 75 100
+    option temp=$vtemp
+    tran 1u 1000u 1u
+    write {cicname}_$vtemp$fend
+end
+
+
 quit
 
 
 .endc
 
 .end
+
