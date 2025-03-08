@@ -17,11 +17,13 @@ N 290 50 310 50 {lab=VSS}
 N -180 180 290 180 {lab=VSS}
 N 290 50 290 180 {lab=VSS}
 N 610 -10 700 -10 {lab=V_OUT}
-N 260 30 310 30 {lab=VSS}
-N 260 30 260 180 {lab=VSS}
 N 140 10 310 10 {lab=#net1}
+N 250 30 310 30 {lab=xxx}
+N 250 30 250 110 {lab=xxx}
+N -300 110 250 110 {lab=xxx}
 C {JNW_GR03_SKY130A/JNW_GR03_IvsT.sym} -10 20 0 0 {name=x1}
 C {devices/ipin.sym} -300 -160 0 0 {name=p1 lab=VDD}
 C {devices/ipin.sym} -300 180 0 0 {name=p2 lab=VSS}
 C {devices/opin.sym} 700 -10 0 0 {name=p3 lab=V_OUT}
 C {JNW_GR03_SKY130A/JNW_GR03_tvsI.sym} 460 20 0 0 {name=x2}
+C {devices/ipin.sym} -300 110 0 0 {name=p4 lab=RST}
