@@ -17,7 +17,7 @@ x1<0> I_TEMP net1 VDD VDD JNWATR_PCH_4C5F0
 x3<1> VD1 VD1 VSS VSS JNWATR_NCH_4C5F0
 x3<0> VD1 VD1 VSS VSS JNWATR_NCH_4C5F0
 x11 GS2 GS2 VSS VSS JNWATR_NCH_4C5F0
-x9 VDD net2 VR1 VD1 VSS JNW_GR03_AMP
+x9 VDD net2 net3 net4 VSS JNW_GR03_AMP
 **.ends
 
 * expanding   symbol:  JNW_TR_SKY130A/JNWTR_RPPO4.sym # of pins=3
@@ -75,7 +75,7 @@ XC1 B A sky130_fd_pr__cap_mim_m3_1 W=5 L=5 MF=1 m=1
 *.ipin VIP
 *.ipin VSS
 *.ipin VDD
-*.ipin VO
+*.opin VO
 x2 net2 VIN net1 net1 JNWATR_PCH_4C1F2
 x1 net3 VIP net1 net1 JNWATR_PCH_4C1F2
 x3 net3 net3 VSS VSS JNWATR_NCH_4C5F0
