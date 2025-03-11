@@ -106,9 +106,17 @@ N -580 600 -550 600 {lab=RST}
 N -490 520 -490 560 {lab=VDD}
 N -490 520 -430 520 {lab=VDD}
 N -430 -430 -430 520 {lab=VDD}
+N -740 120 -660 120 {lab=CLK}
+N -600 160 -600 520 {lab=VSS}
+N -680 520 -600 520 {lab=VSS}
+N -680 520 -680 720 {lab=VSS}
+N -680 720 -490 720 {lab=VSS}
+N -490 660 -490 720 {lab=VSS}
+N -600 -340 -600 80 {lab=VDD}
+N -600 -340 -430 -340 {lab=VDD}
 C {devices/opin.sym} 900 -60 0 0 {name=p2 lab=Q}
 C {devices/ipin.sym} -580 600 0 0 {name=p3 lab=RST}
-C {devices/ipin.sym} -520 120 0 0 {name=p4 lab=CLK}
+C {devices/ipin.sym} -740 120 0 0 {name=p4 lab=CLK}
 C {devices/ipin.sym} -520 660 0 0 {name=p6 lab=VSS}
 C {devices/ipin.sym} -510 440 0 0 {name=p7 lab=D}
 C {devices/opin.sym} 890 100 0 0 {name=p8 lab=NOT_Q}
@@ -120,3 +128,4 @@ C {JNW_GR03_SKY130A/JNW_GR03_NAND3.sym} 60 170 0 0 {name=x3}
 C {JNW_GR03_SKY130A/JNW_GR03_NAND3.sym} 90 440 0 0 {name=x4}
 C {JNW_GR03_SKY130A/JNW_GR03_NAND3.sym} 650 100 0 0 {name=x5}
 C {JNW_GR03_SKY130A/JNW_GR03_NOT.sym} -530 600 0 0 {name=x6}
+C {JNW_GR03_SKY130A/JNW_GR03_NOT.sym} -640 120 0 0 {name=x7}

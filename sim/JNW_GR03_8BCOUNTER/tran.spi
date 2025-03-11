@@ -25,7 +25,8 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD  VSS   dc 1.8
-VCLK CLK  0     pulse(0.1 1.8 0 2n 2n 20n 500n)
+VCLK CLK  0     pulse(0.1 1.8 0  2n 2n 20n 500n)
+VRST RST  0     pulse(0.1 1.7 5u 2n 2n 10u 100u 1)
 
 *-----------------------------------------------------------------
 * DUT
@@ -36,6 +37,7 @@ VCLK CLK  0     pulse(0.1 1.8 0 2n 2n 20n 500n)
 * PROBE
 *----------------------------------------------------------------
 .save v(CLK)
+.save v(RST)
 .save v(B0)
 .save v(B1)
 .save v(B2)
@@ -58,7 +60,7 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-tran 2n 10u 1p
+tran 2n 30u 1p
 write
 quit
 
