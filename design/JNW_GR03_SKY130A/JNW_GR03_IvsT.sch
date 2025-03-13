@@ -73,10 +73,10 @@ N -60 -600 -20 -600 {lab=VDD}
 N -160 -420 -160 -400 {lab=#net1}
 C {devices/ipin.sym} -640 -600 0 0 {name=VDD lab=VDD}
 C {devices/ipin.sym} -640 -20 0 0 {name=VSS lab=VSS}
-C {JNW_TR_SKY130A/JNWTR_RPPO4.sym} -260 -240 1 0 {name=x4 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -100 -540 0 0 {name=x5[1:0]}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -220 -540 0 1 {name=x2[1:0]}
-C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -390 -540 0 1 {name=x6[1:0]}
+C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} -260 -240 1 0 {name=x4 }
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -100 -540 0 0 {name=x5[0:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -220 -540 0 1 {name=x2[0:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -390 -540 0 1 {name=x6[0:0]}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -390 -130 0 1 {name=x7 }
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -370 -100 2 0 {name=x8 }
 C {devices/lab_pin.sym} -260 -280 0 0 {name=p5 sig_type=std_logic lab=VR1}
