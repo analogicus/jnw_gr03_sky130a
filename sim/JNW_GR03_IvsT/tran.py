@@ -12,24 +12,28 @@ def main(name):
     obj = yaml.safe_load(fi)
 
   # Do something to parameters
-  fname = name + ".png"
+  fname = name +".png"
   print(f"Saving {fname}")
 
-  #initialize empty list to store data
   temp = []
-  rising_time = []
 
-  #iterate through the dictionary and separate values
-  for key,value in obj.items():
-    if key.startswith('t_out'):
-      temperature = int(key.replace("t_out",""))
-      rising_time.append(value - 1.0e-6)
+  # Initialize empty lists
+  current = []
+
+  # Iterate through the dictionary and separate the values
+  for key, value in obj.items():
+    if key.startswith('i_temp'):
+      temperature = int(key.replace("i_temp", ""))
+      current.append(value)
       temp.append(temperature)
 
-  sorted_rising = [x for _,x in sorted(zip(temp,rising_time))]
+  sorted_current = [x for _,x in sorted(zip(temp,current))]
   sorted_temp = sorted(temp)
 
-  plt.plot(sorted_temp,sorted_rising)
+  plt.plot(sorted_temp, sorted_current)
+  
+
+  
   plt.show()
   return
-
+  
