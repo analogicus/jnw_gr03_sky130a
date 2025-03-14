@@ -62,7 +62,7 @@ N 260 70 260 140 {lab=LPI}
 C {devices/ipin.sym} -40 10 0 0 {name=VDD lab=VDD}
 C {devices/ipin.sym} -10 590 0 0 {name=VSS lab=VSS}
 C {JNW_TR_SKY130A/JNWTR_RPPO4.sym} 160 370 1 0 {name=x1 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 320 70 0 0 {name=x5[0:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 320 70 0 0 {name=x5[1:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 200 70 0 1 {name=x2[2:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 520 70 0 0 {name=x1[0:0]}
 C {devices/lab_pin.sym} 160 330 0 0 {name=p5 sig_type=std_logic lab=VR1}
