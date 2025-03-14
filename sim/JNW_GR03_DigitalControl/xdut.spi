@@ -1,2 +1,2 @@
 *Automatic generated instance fron ../../tech/scripts/genxdut JNW_GR03_DigitalControl
-XDUT VDD VSS OUT_COMP CLK B0 B1 B2 B3 B4 B5 B6 B7  JNW_GR03_DigitalControl
+XDUT VDD VSS OUT_COMP CLK B0 B1 B2 B3 B4 B5 B6 B7 RST_CAP  JNW_GR03_DigitalControl

@@ -25,7 +25,7 @@
 *-----------------------------------------------------------------
 VSS   VSS      0     dc 0
 VDD   VDD      VSS   dc 1.8
-VCOMP OUT_COMP 0     pulse(0.1 1.7 3u 2n 2n 50n 200n)
+VCOMP OUT_COMP 0     pulse(1.7 0.1 20n 2n 2n 2u 2.5u)
 VCLK  CLK      0     pulse(0   1.8 3n 1n 1n 6n  20n)
 
 *-----------------------------------------------------------------
@@ -38,6 +38,7 @@ VCLK  CLK      0     pulse(0   1.8 3n 1n 1n 6n  20n)
 *----------------------------------------------------------------
 .save v(OUT_COMP)
 .save v(CLK)
+.save v(RST_CAP)
 .save v(B0)
 .save v(B1)
 .save v(B2)
