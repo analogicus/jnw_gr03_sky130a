@@ -37,9 +37,6 @@ N -80 80 -80 120 {lab=B}
 N -110 80 -80 80 {lab=B}
 N -80 80 220 80 {lab=B}
 N 60 -40 370 -40 {lab=Y}
-N 100 180 330 180 {lab=VSS}
-N 330 120 330 180 {lab=VSS}
-N 330 -40 330 50 {lab=Y}
 C {devices/ipin.sym} -90 -180 0 0 {name=p1 lab=VDD}
 C {devices/ipin.sym} -100 180 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} -110 80 0 0 {name=p3 lab=B}
@@ -49,4 +46,3 @@ C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 20 30 0 0 {name=x1 }
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 20 120 0 0 {name=x2 }
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} -60 -110 0 0 {name=x3 }
 C {JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym} 200 -110 0 1 {name=x4 }
-C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} 330 110 0 0 {name=x5 }
