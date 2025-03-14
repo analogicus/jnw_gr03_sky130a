@@ -30,7 +30,7 @@ def main(name):
 
   sorted_current = [x for _,x in sorted(zip(temp,current))]
   sorted_temp = sorted(temp)
-
+  plt.title(f"{sorted_current[-1]/sorted_current[0]}")
   plt.plot(sorted_temp, sorted_current)
   
 

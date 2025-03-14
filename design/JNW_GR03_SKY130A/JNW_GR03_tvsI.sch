@@ -32,8 +32,8 @@ N 260 -240 260 110 {lab=VSS}
 N 260 0 280 -0 {lab=VSS}
 N 550 -100 590 -100 {lab=COMP}
 N 200 -120 200 -80 {lab=OUT}
-N 300 -80 430 -80 {lab=#net1}
-N 300 -200 300 -40 {lab=#net1}
+N 300 -80 430 -80 {lab=VREF}
+N 300 -200 300 -40 {lab=VREF}
 N 200 -120 430 -120 {lab=OUT}
 C {devices/ipin.sym} -210 -200 0 0 {name=p1 lab=I_IN}
 C {devices/ipin.sym} -210 -310 0 0 {name=p2 lab=VDD}
@@ -41,10 +41,10 @@ C {devices/ipin.sym} -200 110 0 0 {name=p3 lab=VSS}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -130 10 0 0 {name=x2 }
 C {devices/ipin.sym} -210 10 0 0 {name=p4 lab=RESET}
 C {devices/opin.sym} 140 -80 1 0 {name=p5 lab=OUT}
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -20 -200 0 0 {name=x6}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -20 -200 0 0 {name=x6[0:0]}
 C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 20 30 0 0 {name=x1[9:0]}
 C {JNW_GR03_SKY130A/JNW_GR03_AMP.sym} 570 -100 0 0 {name=x3}
-C {JNW_TR_SKY130A/JNWTR_RPPO4.sym} 300 -280 1 0 {name=x4[24:0]}
-C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} 300 -40 1 0 {name=x5}
+C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} 300 -280 1 0 {name=x4}
+C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} 300 -40 1 0 {name=x5}
 C {devices/opin.sym} 580 -100 1 0 {name=p6 lab=COMP}
 C {devices/opin.sym} 400 -80 1 0 {name=p7 lab=VREF}

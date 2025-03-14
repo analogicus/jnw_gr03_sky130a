@@ -51,10 +51,10 @@ V0 IBP_1U<0> 0 dc {AVDD/2}
 *----------------------------------------------------------------
 * PROBE
 *----------------------------------------------------------------
-*.save V(X999.x) I(v.X999.Vi)
-*.save v(LPO) v(LPI) v(xdut.vr1) v(xdut.vd1) v(xdut.xota.vstart)
-*.save v(AVDD)
-.save all
+.save V(X999.x) I(v.X999.Vi)
+.save v(LPO) v(LPI) v(xdut.vr1) v(xdut.vd1) v(xdut.xota.vstart)
+.save v(AVDD)
+*.save all
 #ifdef Debug
 .save all
 #else

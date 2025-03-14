@@ -61,9 +61,9 @@ N 260 160 260 190 {lab=LPO}
 N 260 70 260 140 {lab=LPI}
 C {devices/ipin.sym} -40 10 0 0 {name=VDD lab=VDD}
 C {devices/ipin.sym} -10 590 0 0 {name=VSS lab=VSS}
-C {JNW_TR_SKY130A/JNWTR_RPPO2.sym} 160 370 1 0 {name=x1 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 320 70 0 0 {name=x5[0:0]}
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 200 70 0 1 {name=x2[0:0]}
+C {JNW_TR_SKY130A/JNWTR_RPPO4.sym} 160 370 1 0 {name=x1 }
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 320 70 0 0 {name=x5[1:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 200 70 0 1 {name=x2[2:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 520 70 0 0 {name=x1[0:0]}
 C {devices/lab_pin.sym} 160 330 0 0 {name=p5 sig_type=std_logic lab=VR1}
 C {devices/lab_pin.sym} 160 460 0 0 {name=p6 sig_type=std_logic lab=GS2}
@@ -72,6 +72,6 @@ C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} 200 510 0 1 {name=x11[2:0]}
 C {devices/lab_pin.sym} 360 330 0 0 {name=p3 sig_type=std_logic lab=VD1}
 C {devices/opin.sym} 560 170 1 0 {name=I_TEMP lab=I_TEMP}
 C {JNW_GR03_SKY130A/JNW_GR03_AMP.sym} 260 190 3 0 {name=x9}
-C {cborder/border_s.sym} 580 660 0 0 {}
+C {cborder/border_s.sym} 590 660 0 0 {}
 C {devices/ipin.sym} 260 140 0 0 {name=LPI lab=LPI}
 C {devices/opin.sym} 260 160 0 0 {name=LPO lab=LPO}
