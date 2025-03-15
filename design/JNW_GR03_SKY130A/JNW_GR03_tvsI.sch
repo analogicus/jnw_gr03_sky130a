@@ -42,7 +42,7 @@ C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -130 10 0 0 {name=x2 }
 C {devices/ipin.sym} -210 10 0 0 {name=p4 lab=RESET}
 C {devices/opin.sym} 140 -80 1 0 {name=p5 lab=OUT}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -20 -200 0 0 {name=x6[0:0]}
-C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 20 30 0 0 {name=x1[7:0]}
+C {JNW_TR_SKY130A/JNWTR_CAPX4.sym} 20 30 0 0 {name=x1[1:0]}
 C {JNW_GR03_SKY130A/JNW_GR03_AMP.sym} 570 -100 0 0 {name=x3}
 C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} 300 -280 1 0 {name=x4}
 C {JNW_TR_SKY130A/JNWTR_RPPO16.sym} 300 -40 1 0 {name=x5}

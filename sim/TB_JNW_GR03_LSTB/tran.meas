@@ -12,7 +12,7 @@ foreach vtemp -25 0 25 50 75 100
     set fend = .raw
     load {cicname}_$vtemp$fend
 
-    meas tran i_temp$vtemp find i(VSENS) at=1000n
+    meas tran i_temp$vtemp find i(VSENS) at=100n
 
 end
 
