@@ -28,7 +28,7 @@ VDD  VDD  VSS  dc 1.8
 
 VLST LPI LPO dc 0
 
-VSENS I_TEMP 0 dc 0.5
+VSENS I_TEMP 0 dc 0.0
 
 
 *-----------------------------------------------------------------
@@ -57,7 +57,7 @@ set fend = .raw
 
 foreach vtemp -25 0 25 50 75 100
     option temp=$vtemp
-    tran 1n 1000n 1n
+    tran 1n 100n 1n
     write {cicname}_$vtemp$fend
 end
 
