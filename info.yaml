@@ -16,4 +16,4 @@ doc:
        - JNW_GR03
 
 sim:
-  JNW_GR03: make typical
+  TB_JNW_GR03_LSTB: make typical
