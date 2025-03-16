@@ -34,7 +34,7 @@ The difficult part is to build a OP-AMP with good stability and a DC gain high e
 | :-: |
 | *Typical characterisitc of out conversion from temperature to current* |
 
-We see that the characteristic is almost linear. With this variation in current depending to the temperature we can after charge faste or slower a capacitor to convert this current into time, which can increase the value to measure (here just few uA).\
+We see that the characteristic is almost linear. With this variation in current depending to the temperature we can after charge faste or slower a capacitor to convert this current into time, which can increase the value to measure (here just few uA).
 
 | ![Characteristic current vs temperature for all the corners](Media/Current_vs_Temperature.png) |
 | :-: |
@@ -57,10 +57,10 @@ To compare the 2 signals (capacitor output voltage and reference voltage), we us
 | :-: |
 | *Capacitor output voltage for different temperature (-25 50 100) with holding reset until 1 us* |
 
-Now, we see that the capacitor is charging linearly and the slope is changing with the temperature (related to current, sub-circuit 1). \ 
+Now, we see that the capacitor is charging linearly and the slope is changing with the temperature (related to current, sub-circuit 1). \
 By comparing this signal with a constant signal, we can generate a period which is proportional to temperature. \
 Note : The voltage reference is now just a voltage divider made with resistance, it's ok to do this because the input current into the OP-AMP is really small so will don't have a huge voltage drop. Voltage reference will be change a bit with a temperature variation (due to resistance) but it is really small (less than a mV by simulation) so this difference in voltage reference will change so little the time period that the digital conversion will earase this disfunctionnality. Futhermore, we don't have the time to build a better voltage reference and we prefer to concentrate in other part of the circuit like digital conversion and increase sensibility.
- 
+
 ## Sub circuit 3 : Digital conversion and control
 
 | ![Schematic of the sub circuit 3, digital part](Media/Digital_part.png) |
@@ -90,7 +90,7 @@ We need to achieve this truth table
 So we need a NOR gate
 
 - then save the 8 bits values into the D latches.
-We connect the output bit signal of the counter to the D input and the enable signal of the latch is the output of the comparator. \
+We connect the output bit signal of the counter to the D input and the enable signal of the latch is the output of the comparator. 
 
 | OUT_COMPA | Bx_OUTCOUNT | Bx_LATCH  |
 | :-        | :-:         | :-:       |
@@ -100,9 +100,9 @@ We connect the output bit signal of the counter to the D input and the enable si
 
 - then we can reset the counter, the capacitor and resart the main clock to resart counting and measuring
 To do this we have add a supplementary 2 bit counter to delay the time when the output signal of the comparator reach "1" and when we need to reset the counter. This is important because the saving process of the 8 bits into D latch is slower than the process to reset the counter and we want to save the value measured not the reseted value.\
-(during reset of capacitor voltage will drop to 0V so the comparator value will be "0") \
+(during reset of capacitor voltage will drop to 0V so the comparator value will be "0")
 
-| ![Simulation for all digital sub-circuit, counter, latch, and reset function](sim/JNW_GR03_DigitalControl/output_tran/FirstTestFullControl.png) |
+| ![Simulation for all digital sub-circuit, counter, latch, and reset function](Media/FirstTestFullControl.png) |
 | :-: |
 | *Simulation for the all digital sub-circuit with counter, latches and reset function* |
 
@@ -110,7 +110,7 @@ We can see  in the first graph, the output signal of the comparator which as alm
 The second graph is the clock signal. \
 The third graph show when the auxialiar counter reach his maximal value and we can reset the main counter because measured value is stored \
 In the forth and fifth is the B0 and B1 just at the output of the counter. We see that counter is working well by incrementing value. \
-In the sixth graph, we can see the B2 signal at the output of his D latch. We see that the value is well store at the end of the auxiliary counter (value saved to make user reading easy). \
+In the sixth graph, we can see the B2 signal at the output of his D latch. We see that the value is well store at the end of the auxiliary counter (value saved to make user reading easy).
 
 
 # What
