@@ -7,7 +7,7 @@ echo "MEAS_START"
 
 
 *foreach vtemp -25 0 25 50 75 100 120
-foreach vtemp -40 - 20 0 20 50 75 100 120
+foreach vtemp -40 -20 0 20 50 75 100 120
     echo "LINE_SHIFT"
     echo "LINE_SHIFT"
     set fend = .raw
