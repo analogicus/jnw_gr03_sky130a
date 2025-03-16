@@ -15,7 +15,7 @@ Temperature sensor based on Vgs characteristic of MosFET working as a diode.
 Multiples conversions (Temperature to current then current to time and finally 8 bits digital output) 
 
 # How
-The all circuit is divide in 3 sub circuits. \
+The all circuit is divide in 3 sub circuits.
 ## Sub circuit 1 : Conversion from temperature to current
 
 | ![Schematic of the sub circuit 1, to convert temperature into current](Media/IvsT_circuit.png) |
@@ -28,7 +28,7 @@ We will use the diode characteristic which is different depending on the tempera
 The problem is this relation is not linear but exponential. \
 So to solve this problem, we will use a second diode. By substracting the 2 voltages, we will end up with a voltage which varies linearly with Temperature, by adding a resistor we can tranform this voltage difference into a current, our output current. \
 By adding a current mirror we can generate the two currents which will go flow trough the 2 diodes. \
-The difficult part is to build a OP-AMP with good stability and a DC gain high enough to replicate one of the voltage create by the diode to the other branch of the circuit. \
+The difficult part is to build a OP-AMP with good stability and a DC gain high enough to replicate one of the voltage create by the diode to the other branch of the circuit.
 
 | ![Typical characteristic of our conversion from temperature to current](Media/Current_vs_Temperature_typical.png) |
 | :-: |
@@ -51,13 +51,16 @@ This conversion is mainly based on the charging time of a capacitor. With the co
 With the fact that the output current is proportionnal to temperature. The slope of the voltage versus time during charging time is proportionnal to the temperature. \
 So,now we will compare this output voltage to a reference voltage. We measure the rising time from 0V to the voltage reference. This period of time will be proportional to temperature. \
 We have a transistor which is use as a swith to reset to 0V the capacitor when it is charged. \
-To compare the 2 signals (capacitor output voltage and reference voltage), we use the same OP-AMP describe in the first sub-circuit, but working in comparison mode. \
+To compare the 2 signals (capacitor output voltage and reference voltage), we use the same OP-AMP describe in the first sub-circuit, but working in comparison mode.
 
 | ![Capacitor output voltage for different temperature (-25 50 100) with holding reset until 1us](Media/V_out_cap_05.png) |
 | :-: |
 | *Capacitor output voltage for different temperature (-25 50 100) with holding reset until 1 us* |
 
-
+Now, we see that the capacitor is charging linearly and the slope is changing with the temperature (related to current, sub-circuit 1). \ 
+By comparing this signal with a constant signal, we can generate a period which is proportional to temperature. \
+Note : The voltage reference is now just a voltage divider made with resistance, it's ok to do this because the input current into the OP-AMP is really small so will don't have a huge voltage drop. Voltage reference will be change a bit with a temperature variation (due to resistance) but it is really small (less than a mV by simulation) so this difference in voltage reference will change so little the time period that the digital conversion will earase this disfunctionnality. Futhermore, we don't have the time to build a better voltage reference and we prefer to concentrate in other part of the circuit like digital conversion and increase sensibility.
+ 
 ## Sub circuit 3 : Digital conversion and control
 
 | ![Schematic of the sub circuit 3, digital part](Media/Digital_part.png) |
@@ -114,8 +117,8 @@ In the sixth graph, we can see the B2 signal at the output of his D latch. We se
 
 | What            |        Cell/Name |
 | :-              |  :-:       |
-| Schematic       | design/JNW_GR03_SKY130A/JNW_GR03_General.sch |
-| Layout          | design/JNW_GR03_SKY130A/JNW_GR03_General.mag |
+| Schematic       | design/JNW_GR03_SKY130A/TB_JNW_GR03_ANALOG.sch |
+| Layout          | design/JNW_GR03_SKY130A/TB_JNW_GR03_ANALOG.mag |
 
 
 # Changelog/Plan
