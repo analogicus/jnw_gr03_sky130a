@@ -49,9 +49,18 @@ The designed ota has topology as shown in the figure below:
 
 The ota is implemented in a feedback configuration with the folloing specifications:
 
-|       f3db |   gm_db |   lf_gain |   pm_deg |         ug |   v(lpo) |   v(xdut.vd1) |   v(xdut.vr1) |       vdiff | name              | time                     | type   |
-|------------|---------|-----------|----------|------------|----------|---------------|---------------|-------------|-------------------|--------------------------|--------|
-| 1.7484e+05 | -14.105 |    42.942 |   53.739 | 2.2425e+07 |  0.80777 |       0.62295 |       0.62349 | -0.00053489 | lstb_SchGtKttTtVt | Sun Mar 16 19:18:10 2025 | Sch    |
+
+| Parameter   | value      |
+| :--         | --:        |
+| f3db        | 1.7484e+05 |
+| gm_db       | -14.105    |
+| lf_gain     | 42.942     |
+| pm_deg      | 53.739     |
+| ug          | 2.2425e+07 |
+| v(lpo)      | 0.80777    |
+| v(xdut.vd1) | 0.62295    |
+| v(xdut.vr1) | 0.62349    |
+| vdiff       | -0.000534  |
 
 
 ## Sub circuit 2 : Conversion from current to time
@@ -72,8 +81,9 @@ To compare the 2 signals (capacitor output voltage and reference voltage), we us
 
 Now, we see that the capacitor is charging linearly and the slope is changing with the temperature (related to current, sub-circuit 1). \
 By comparing this signal with a constant signal, we can generate a period which is proportional to temperature. \
-Note : The voltage reference is now just a voltage divider made with two resistors, it's ok to do this because the input current into the OP-AMP is really small so will don't have a huge voltage drop. Voltage reference will be change a bit with a temperature variation (due to resistance) but it is really small (less than a mV by simulation) so this difference in voltage reference will change so little the time period that the digital conversion will earase this disfunctionnality. Futhermore, we don't have the time to build a better voltage reference and we prefer to concentrate in other part of the circuit like digital conversion and increase sensibility.
+Note : The voltage reference is now just a voltage divider made with two resistors, it's ok to do this because the input current into the OP-AMP is really small so will don't have a huge voltage drop. Voltage reference will be change a bit with a temperature variation (due to resistance) but it is really small (less than a mV by simulation) so this difference in voltage reference will change so little the time period that the digital conversion will earase this disfunctionnality. Futhermore, we don't have the time to build a better voltage reference and we prefer to concentrate in other part of the circuit like digital conversion and increase sensibility.  
 Note: the comparator is made using the same OTA used in "Sub cicuit 1 : Conversion from temperature to current". We have experienced some problem with this approach in respect to timing of digital LOW to HIGH not happening at the rizing or falling edge of the clock signal. We plan to implement at track-and-latch comparator to combat this at a later date. 
+
 ## Sub circuit 3 : Digital conversion and control
 
 | ![Schematic of the sub circuit 3, digital part](Media/Digital_part.png) |
