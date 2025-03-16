@@ -1,4 +1,4 @@
-* Measure JNW_GR03_General
+* Measure TB_JNW_GR03_Analog
 .control
 
 load {cicname}.raw
