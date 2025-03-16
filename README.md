@@ -112,6 +112,24 @@ The third graph show when the auxialiar counter reach his maximal value and we c
 In the forth and fifth is the B0 and B1 just at the output of the counter. We see that counter is working well by incrementing value. \
 In the sixth graph, we can see the B2 signal at the output of his D latch. We see that the value is well store at the end of the auxiliary counter (value saved to make user reading easy).
 
+## Simulation for the circuit
+
+| ![Simulation all circuit](Media/General_test.png) |
+| :-: |
+| *Simulation for the all circuit for -40 0 120 °C* |
+
+We see differents things :
+
+- First capacitor is charging linearly and with a different slope depending on the temperature, like wanted
+- Constant reference voltage (for differents temperatures and also for all the simulation time)
+- B0 and B1 (second and third graphs) keep there last value until comparator signal reach "1" digital
+- We see also the reset signal emitted when comparator signal reach "1" digital and bits values saved in D latches
+
+** Major Problem **
+
+We see also that our major problem here is the rising (and falling time) of the comparator so the OP-AMP, due to this during the output signal of the comparator reach "1" digital the counter is still counting and the final value measured is to high.  
+The falling time is too long too, during this time, the 2 bit counter have time to reach more than one time the maximal value and the output of the comparator is still high so bits values in D latch are also reset.  
+ 
 
 # What
 

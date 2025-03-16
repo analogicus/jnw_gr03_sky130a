@@ -26,7 +26,7 @@
 VSS  VSS  0     dc 0
 VDD  VDD  VSS   dc 1.8
 *VRST RST  0     pulse(0 1.8 0 2n 2n 1u 10u 1) 
-VCLK  CLK 0     pulse(0 1.8 5n 1n 1n 6n 20n)
+VCLK  CLK 0     pulse(0 1.8 5n 2n 2n 6n 20n)
 
 *-----------------------------------------------------------------
 * DUT
@@ -65,9 +65,9 @@ optran 0 0 0 1n 1u 0
 set fend = .raw
 
 * foreach vtemp -25 0 25 50 75 100 120
-foreach vtemp -25 50 120
+foreach vtemp -40 -20 0 20 50 75 100 120
     option temp=$vtemp
-    tran 1n 10u 1n
+    tran 2n 10u 1n
     write {cicname}_$vtemp$fend
 end
 
