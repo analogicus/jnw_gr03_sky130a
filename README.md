@@ -17,6 +17,7 @@ Multiples conversions (Temperature to current then current to time and finally 8
 # How
 The all circuit is divide in 3 sub circuits.
 ## Sub circuit 1 : Conversion from temperature to current
+![Schematic of the sub circuit 1, to convert temperature into current](Media/IvsT_circuit.png)
 In this sub circuit we use the semiconductor physics to made the conversion between temperature
 (outside factor) to a current. The goal of this subcircuit is to have an output current proportionnal to temperature.
 We will use the diode characteristic which is different depending on the temperature to make this conversion, our diodes are made by short-circuited the drain-gate of MOSFETs.
@@ -25,20 +26,23 @@ So to solve this problem, we will use a second diode. By substracting the 2 volt
 By adding a current mirror we can generate the two currents which will go flow trough the 2 diodes.
 The difficult part is to build a OP-AMP with good stability and a DC gain high enough to replicate one of the voltage create by the diode to the other branch of the circuit.
 <Trygve what the description of the OP-AMP here>
-<add the value of the IvsT characteristic>
+![Typical characteristic of our conversion from temperature to current](Media/Current_vs_Temperature_typical.png)
+We see that the characteristic is quit linear <compute coefficient>
+![Characteristic current vs temperature for all the corners](Media/Current_vs_Temperature.png)
 
 
 ## Sub circuit 2 : Conversion from current to time
+![Schematic of the sub circuit 2, conversion from current to time](Media/tvsI_circuit.png)
 This conversion is mainly based on the charging time of a capacitor. With the constant current provide by the first sub-circuit the capacitor will charge linearly with respect to time.
 With the fact that the output current is proportionnal to temperature. The slope of the voltage versus time during charging time is proportionnal to the temperature.
 So,now we will compare this output voltage to a reference voltage. We measure the rising time from 0V to the voltage reference. This period of time will be proportional to temperature.
 We have a transistor which is use as a swith to reset to 0V the capacitor when it is charged. 
 To compare the 2 signals (capacitor output voltage and reference voltage), we use the same OP-AMP describe in the first sub-circuit, but working in comparison mode.
 <add values of tvsI characteristic>
-![Capacitor output voltage for different temperature (-25 50 100) with holding reset until 1us](sim/JNW_GR03_General/output_tran/V_out_cap_05.png)
+![Capacitor output voltage for different temperature (-25 50 100) with holding reset until 1us](Media/V_out_cap_05.png)
 
 ## Sub circuit 3 : Digital conversion and control
-
+![Schematic of the sub circuit 3, digital part](Media/Digital_part.png)
 The last step is to convert this analog period of time value into a digital value coded with 8 bits.
 To do that, we have built an 8 bits asynchronous counter. It will count how many clock cycle passed during the time period and by knowing the period of a clock cycle we can compute the real period to charge the capacitor and at the and the temperature value.
 The 8 bits counter is build with 8 D flip-flops with falling edge and reset.
@@ -51,6 +55,7 @@ So when the value of the comparator is "1" (capacitor voltage higher than refere
 - stop the clock, to fix the digital output value to the right value
 We need to achieve this truth table
 | OUT_COMPA | CLK | CLK_COUNT   |
+| :-        | :-: | :-:         |
 | 0         | 0   | 0           |
 | 0         | 1   | 1           |
 | 1         | 0   | 1 (no edge) |
@@ -59,6 +64,7 @@ So we need a NOR gate
 - then save the 8 bits values into the D latches.
 We connect the output bit signal of the counter to the D input and the enable signal of the latch is the output of the comparator.
 | OUT_COMPA | Bx_OUTCOUNT | Bx_LATCH  |
+| :-        | :-:         | :-:       |
 | 0         | X           | Latched   |
 | 1         | 0           | 0 (saved) |
 | 1         | 1           | 1 (saved) | 
@@ -107,3 +113,5 @@ To do this we have add a supplementary 2 bit counter to delay the time when the 
 | Temperature                           | -40     | 27              | 125     | C     |
 | VHL (highest voltage for "0" digital) |         | 0.3*VDD         |         | V     |
 | VLH (lowest voltage for "1" digital)  |         | 0.7*VDD         |         | V     |
+
+![All circuit schematic](Media/General_circuit.png)
