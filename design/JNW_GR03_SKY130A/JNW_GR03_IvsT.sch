@@ -57,8 +57,8 @@ N -150 -540 -10 -540 {lab=I_TEMP}
 C {devices/ipin.sym} -630 -710 0 0 {name=VDD lab=VDD}
 C {devices/ipin.sym} -630 -130 0 0 {name=VSS lab=VSS}
 C {JNW_TR_SKY130A/JNWTR_RPPO8.sym} -250 -350 1 0 {name=x4 }
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -90 -650 0 0 {name=x5[2:0]}
-C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -210 -650 0 1 {name=x[6:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -90 -650 0 0 {name=x5[1:0]}
+C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -210 -650 0 1 {name=x[4:0]}
 C {devices/lab_pin.sym} -250 -390 0 0 {name=p5 sig_type=std_logic lab=VR1}
 C {devices/lab_pin.sym} -250 -260 0 0 {name=p6 sig_type=std_logic lab=GS2}
 C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -90 -210 0 0 {name=x3}

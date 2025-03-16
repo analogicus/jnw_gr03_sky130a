@@ -29,11 +29,15 @@ def main(name):
 
   sorted_current = [x for _,x in sorted(zip(temp,current))]
   sorted_temp = sorted(temp)
-
-  plt.plot(sorted_temp, sorted_current)
   
-
-  
+  slope = (sorted_current[-1] - sorted_current[0]) / (sorted_temp[-1] - sorted_temp[0])
+  intercept = abs(sorted_temp[0])*slope+sorted_current[0]
+  linear = [(slope*sorted_temp[i] + intercept) for i in range(len(sorted_temp))]
+  plt.plot(sorted_temp, sorted_current,label='Simulation')
+  plt.plot(sorted_temp,linear,linestyle='dashed',label='linear estimation')
+  plt.legend()
+  plt.xlabel('Temperature (°C)')
+  plt.ylabel('Output current (A)')
   plt.show()
   return
   
