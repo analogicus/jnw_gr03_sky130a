@@ -7,7 +7,7 @@ all: typical etc mc summary
 TB=tran
 VIEW=Sch
 #VIEW=Lay
-CELL=JNW_GR03_TB
+CELL=TB_JNW_GR03_ANALOG
 LIB =JNW_GR03_SKY130A
 OPT=
 
