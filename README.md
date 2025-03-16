@@ -125,7 +125,7 @@ We see differents things :
 - B0 and B1 (second and third graphs) keep there last value until comparator signal reach "1" digital
 - We see also the reset signal emitted when comparator signal reach "1" digital and bits values saved in D latches
 
-** Major Problem **
+**Major Problem**
 
 We see also that our major problem here is the rising (and falling time) of the comparator so the OP-AMP, due to this during the output signal of the comparator reach "1" digital the counter is still counting and the final value measured is to high.  
 The falling time is too long too, during this time, the 2 bit counter have time to reach more than one time the maximal value and the output of the comparator is still high so bits values in D latch are also reset.  
