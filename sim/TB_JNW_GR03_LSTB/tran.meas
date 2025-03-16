@@ -5,7 +5,7 @@ load {cicname}.raw
 
 echo "MEAS_START"
 
-foreach vtemp -25 0 25 50 75 100
+foreach vtemp -40 -35 -30 -25 -20 -15 -10 -5 0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 105 110 115 120 125 130 135 140
 
     echo "LINE_SHIFT"
     echo "LINE_SHIFT"
