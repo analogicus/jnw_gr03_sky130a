@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/TB_JNW_GR03_ANALOG_lpe.spi
+.include ../../../work/lpe/JNW_GR03_General_lpe.spi
 #else
-.include ../../../work/xsch/TB_JNW_GR03_ANALOG.spice
+.include ../../../work/xsch/JNW_GR03_General.spice
 #endif
 
 *-----------------------------------------------------------------
@@ -25,7 +25,8 @@
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
 VDD  VDD  VSS   dc 1.8
-VRST RST  0     pulse(0 1.8 0 2n 2n 1u 10u 1) 
+*VRST RST  0     pulse(0 1.8 0 2n 2n 1u 10u 1) 
+VCLK  CLK 0     pulse(0 1.8 5n 1n 1n 6n 20n)
 
 *-----------------------------------------------------------------
 * DUT
@@ -36,9 +37,18 @@ VRST RST  0     pulse(0 1.8 0 2n 2n 1u 10u 1)
 * PROBE
 *----------------------------------------------------------------
 .save v(V_OUT)
-.save v(RST)
+.save v(RST_CAP)
 .save v(V_COMP)
 .save v(V_REF)
+.save v(CLK)
+.save v(B0)
+.save v(B1)
+.save v(B2)
+.save v(B3)
+.save v(B4)
+.save v(B5)
+.save v(B6)
+.save v(B7)
 
 *----------------------------------------------------------------
 * NGSPICE control
@@ -56,7 +66,7 @@ set fend = .raw
 
 foreach vtemp -25 0 25 50 75 100 120
     option temp=$vtemp
-    tran 1n 10u 1n
+    tran 1n 11u 1n
     write {cicname}_$vtemp$fend
 end
 

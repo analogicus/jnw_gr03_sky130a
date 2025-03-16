@@ -1,0 +1,22 @@
+* Measure JNW_GR03_General
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+foreach vtemp -25 0 25 50 75 100 120
+
+    echo "LINE_SHIFT"
+    echo "LINE_SHIFT"
+    set fend = .raw
+    load {cicname}_$vtemp$fend
+
+    meas tran V_OUT$vtemp find v(V_OUT) at=10u
+    meas tran V_COMP$vtemp find v(V_COMP) at=10u
+    meas tran V_REF$vtemp find v(V_REF) at=10u
+    meas tran t_OUT$vtemp when v(V_OUT)=v(V_REF) CROSS=LAST
+end
+
+echo "MEAS_END"
+.endc
