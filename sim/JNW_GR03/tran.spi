@@ -24,7 +24,9 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8 0 dc 1.8
+VDD  VDD  VSS   dc 1.8
+*VRST RST  0     pulse(0 1.8 0 2n 2n 1u 10u 1) 
+VCLK  CLK 0     pulse(0 1.8 5n 1n 1n 6n 20n)
 
 *-----------------------------------------------------------------
 * DUT
@@ -34,8 +36,19 @@ VDD  VDD_1V8 0 dc 1.8
 *----------------------------------------------------------------
 * PROBE
 *----------------------------------------------------------------
-.save i(I2) i(I1) v(I2)
-
+.save v(V_OUT)
+.save v(RST_CAP)
+.save v(V_COMP)
+.save v(V_REF)
+.save v(CLK)
+.save v(B0)
+.save v(B1)
+.save v(B2)
+.save v(B3)
+.save v(B4)
+.save v(B5)
+.save v(B6)
+.save v(B7)
 
 *----------------------------------------------------------------
 * NGSPICE control
@@ -49,11 +62,15 @@ unset askquit
 optran 0 0 0 1n 1u 0
 
 
-tran 1n 10n 1p
-write
+set fend = .raw
+
+* foreach vtemp -25 0 25 50 75 100 120
+foreach vtemp -25 50 120
+    option temp=$vtemp
+    tran 1n 10u 1n
+    write {cicname}_$vtemp$fend
+end
+
 quit
-
-
 .endc
-
 .end

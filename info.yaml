@@ -1,19 +1,19 @@
-ibrary: JNW_GR03_SKY130A
-cell: TB_JNW_GR03_ANALOG
+library: JNW_GR03_SKY130A
+cell: JNW_GR03
 # Your name
-author: The3Musketeers sad face
+author: Remi Trygve Tousif
 # Your github username
-github: DonadeyRemi
+github: analogicus
 # Something funny and descriptive
-tagline: Simulation for the all circuit
+tagline: 42 is still the answer. 
 # Your email, if you so wish
-email: Wik.Trygve@gmail.com
+email: Multiple emails
 # Your github site, usually <github username>.github.io
 url: analogicus.github.io
 doc:
   libraries:
      JNW_GR03_SKY130A:
-       - TB_JNW_GR03_ANALOG
+       - JNW_GR03
 
 sim:
-  TB_JNW_GR03_ANALOG: make typical
+  JNW_GR03: make typical
