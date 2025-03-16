@@ -56,12 +56,12 @@ And lastly the time signal is used to produce a digital signal.
 
 # Step 1, Temperature to current.
 Current to temperature proportionality for typical paramteres for the designed circuit is shown in figure
-![Current vs. Temperature](media/Current_vs_Temperature_typical)
+![Current vs. Temperature](media/Current_vs_Temperature_typical.png)
 with cicruits respective feedback amplifierloop having specifications:
 |       f3db |   gm_db |   lf_gain |   pm_deg |         ug |   v(lpo) |   v(xdut.vd1) |   v(xdut.vr1) |       vdiff | name              | time                     | type   |
 |------------|---------|-----------|----------|------------|----------|---------------|---------------|-------------|-------------------|--------------------------|--------|
 | 1.7484e+05 | -14.105 |    42.942 |   53.739 | 2.2425e+07 |  0.80777 |       0.62295 |       0.62349 | -0.00053489 | lstb_SchGtKttTtVt | Sun Mar 16 19:18:10 2025 | Sch    |
 
 Monte carlo corner simulation for the circuit is shown in figure:
-![MC corner simulation for current vs. Temperature](media/Current_vs_Temperature)
+![MC corner simulation for current vs. Temperature](media/Current_vs_Temperature.png)
 
