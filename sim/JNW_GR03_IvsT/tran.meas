@@ -1,0 +1,18 @@
+* Measure JNW_GR03_IvsT
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+foreach vtemp -25 0 25 50 75 100 120
+   echo "LINE_SHIFT"
+   echo "LINE_SHIFT"
+   set fend=.raw
+   load {cicname}_$vtemp$fend
+   
+   meas tran i_temp$vtemp find i(VPROBE) at=1000u
+end
+
+echo "MEAS_END"
+.endc
