@@ -36,10 +36,10 @@ def main(name):
   
   plt.title(f"{sorted_current[-1]/sorted_current[0]}")
   plt.plot(sorted_temp, sorted_current)
-  plt.ylabel("current [uA]")
-  plt.xlabel("Temperature [°C]")
-  plt.title("Current vs Temperature")
-  plt.xticks([-40,0,40,80,120])
+  plt.ylabel("current [muA]", fontsize = 18)
+  plt.xlabel("Temperature [°C]", fontsize=18)
+  plt.title("Current vs Temperature", fontsize= 20)
+  plt.xticks([-40,-20,0,20,40,60,80,100,120,140])
 
   plt.show()
   if name.startswith('output_tran/tran_SchGtKttmmTtVt'):

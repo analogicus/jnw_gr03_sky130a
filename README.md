@@ -47,7 +47,7 @@ The designed ota has topology as shown in the figure below:
 | :-: |
 | *Schematic of 3 current mirror ota.* |
 
-The ota is implemented in a feedback configuration with the folloing specifications:
+The ota is implemented in a feedback configuration with the following specifications:
 
 
 | Parameter   | value      |

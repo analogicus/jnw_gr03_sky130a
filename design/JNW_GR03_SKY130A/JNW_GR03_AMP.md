@@ -1,5 +1,14 @@
-The ota is implemented in a feedback configuration with the folloing specifications:
+Implemented OTA has a 3 current mirror topology with PMOS differential input. The ota is used in a feedback configuration in the IvsT circuit with the following specifications:
 
-|       f3db |   gm_db |   lf_gain |   pm_deg |         ug |   v(lpo) |   v(xdut.vd1) |   v(xdut.vr1) |       vdiff | name              | time                     | type   |
-|------------|---------|-----------|----------|------------|----------|---------------|---------------|-------------|-------------------|--------------------------|--------|
-| 1.7484e+05 | -14.105 |    42.942 |   53.739 | 2.2425e+07 |  0.80777 |       0.62295 |       0.62349 | -0.00053489 | lstb_SchGtKttTtVt | Sun Mar 16 19:18:10 2025 | Sch    |
+| Parameter   | value      |
+| :--         | --:        |
+| f3db        | 1.7484e+05 |
+| gm_db       | -14.105    |
+| lf_gain     | 42.942     |
+| pm_deg      | 53.739     |
+| ug          | 2.2425e+07 |
+| v(lpo)      | 0.80777    |
+| v(xdut.vd1) | 0.62295    |
+| v(xdut.vr1) | 0.62349    |
+| vdiff       | -0.000534  |
+

@@ -14,34 +14,20 @@ doc:
   libraries:
      JNW_GR03_SKY130A:
        - JNW_GR03
-       - JNW_GR03_2BCOUNTER_R
-       - JNW_GR03_2BCOUNTER_R.sym
-       - JNW_GR03_8BCOUNTER
-       - JNW_GR03_8BCOUNTER.sym
-       - JNW_GR03_AMP
-       - JNW_GR03_AMP.sym
-       - JNW_GR03_DFLIPFLOP_F_R
-       - JNW_GR03_DFLIPFLOP_F_R.sym
-       - JNW_GR03_DFLIPFLOP_R
-       - JNW_GR03_DFLIPFLOP_R.sym
-       - JNW_GR03_DFLIPFLOP_R_R
-       - JNW_GR03_DFLIPFLOP_R_R.sym
-       - JNW_GR03_DigitalControl
-       - JNW_GR03_DigitalControl.sym
-       - JNW_GR03_DLATCH
-       - JNW_GR03_DLATCH.sym
        - JNW_GR03_IvsT
-       - JNW_GR03_IvsT.sym
-       - JNW_GR03_NAND
-       - JNW_GR03_NAND.sym
-       - JNW_GR03_NAND3
-       - JNW_GR03_NAND3.sym
-       - JNW_GR03_NOT
-       - JNW_GR03_NOT.sym
-       - JNW_GR03_TFLIPFLOP
-       - JNW_GR03_TFLIPFLOP.sym
        - JNW_GR03_tvsI
-       - JNW_GR03_tvsI.sym
+       - JNW_GR03_AMP
+       - JNW_GR03_2BCOUNTER_R
+       - JNW_GR03_8BCOUNTER
+       - JNW_GR03_DFLIPFLOP_F_R
+       - JNW_GR03_DFLIPFLOP_R
+       - JNW_GR03_DFLIPFLOP_R_R
+       - JNW_GR03_DigitalControl
+       - JNW_GR03_DLATCH
+       - JNW_GR03_NAND
+       - JNW_GR03_NAND3
+       - JNW_GR03_NOT
+       - JNW_GR03_TFLIPFLOP
        - JNW_GR03_XOR
        - JNW_GR03_XOR.sym
        - TB_JNW_GR03_ANALOG
