@@ -41,13 +41,6 @@ N -250 -370 -170 -370 {lab=VR1}
 N -130 -390 -130 -370 {lab=VD1}
 N -130 -370 -50 -370 {lab=VD1}
 N -50 -130 -10 -130 {lab=VSS}
-N -50 -210 -30 -210 {lab=VSS}
-N -30 -210 -30 -170 {lab=VSS}
-N -270 -210 -250 -210 {lab=VSS}
-N -270 -210 -270 -160 {lab=VSS}
-N -270 -160 -250 -160 {lab=VSS}
-N -30 -170 -30 -160 {lab=VSS}
-N -50 -160 -30 -160 {lab=VSS}
 N -50 -710 -10 -710 {lab=VDD}
 N -150 -650 -150 -510 {lab=#net1}
 N -10 -540 -10 -520 {lab=#net1}
@@ -69,11 +62,20 @@ C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -90 -650 0 0 {name=x5[2:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} -210 -650 0 1 {name=x[2:0]}
 C {devices/lab_pin.sym} -250 -390 0 0 {name=p5 sig_type=std_logic lab=VR1}
 C {devices/lab_pin.sym} -250 -260 0 0 {name=p6 sig_type=std_logic lab=GS2}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -90 -210 0 0 {name=x3}
-C {JNW_ATR_SKY130A/JNWATR_NCH_4C5F0.sym} -210 -210 0 1 {name=x11[5:0]}
 C {devices/lab_pin.sym} -50 -390 0 0 {name=p3 sig_type=std_logic lab=VD1}
 C {devices/opin.sym} 100 -580 1 0 {name=I_TEMP lab=I_TEMP}
 C {JNW_GR03_SKY130A/JNW_GR03_AMP.sym} -150 -530 3 0 {name=x9}
-C {cborder/border_s.sym} 110 -30 0 0 {}
 C {JNW_TR_SKY130A/JNWTR_CAPX1.sym} -10 -460 0 0 {name=x2[1:0]}
 C {JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym} 60 -650 0 0 {name=x1[2:0]}
+C {devices/npn.sym} -70 -210 0 0 {name=Q1
+model=MMBT2222
+device=MMBT2222
+footprint=SOT23
+area=1
+m=1}
+C {devices/npn.sym} -230 -210 0 1 {name=Q2
+model=MMBT2222
+device=MMBT2222
+footprint=SOT23
+area=1
+m=1}
