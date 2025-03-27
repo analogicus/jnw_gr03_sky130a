@@ -1,2 +1,6 @@
 *Automatic generated instance fron ../../tech/scripts/genxdut JNW_GR03
+<<<<<<< HEAD
 XDUT VDD VSS I_TEMP  JNW_GR03
+=======
+XDUT VDD VSS V_OUT V_COMP V_REF CLK RST_CAP B0 B1 B2 B3 B4 B5 B6 B7  JNW_GR03
+>>>>>>> main

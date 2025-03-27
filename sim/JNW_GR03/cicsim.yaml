@@ -6,4 +6,8 @@ corner:
   Sch: ''
 ngspice:
   library: JNW_GR03_SKY130A
+<<<<<<< HEAD
   cell: JNW_GR03
+=======
+  cell: TB_JNW_GR03_ANALOG
+>>>>>>> main
