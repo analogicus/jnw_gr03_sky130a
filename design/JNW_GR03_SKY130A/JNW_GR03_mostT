@@ -1,0 +1,9 @@
+v {xschem version=3.4.6 file_version=1.2}
+G {}
+K {}
+V {}
+S {}
+E {}
+C {JNW_ATR_SKY130A/JNWATR_NCH_2C5F0.sym} 15290 -10270 0 0 {name=x1 }
+C {JNW_ATR_SKY130A/JNWATR_NCH_8C5F0.sym} -328302740 -292717060 0 0 {name=x2 }
+C {JNW_ATR_SKY130A/JNWATR_NCH_8C5F0.sym} -636415960 -425348580 0 0 {name=x3 }
