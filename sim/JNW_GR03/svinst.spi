@@ -1,0 +1,27 @@
+*Automatic generated instance fron ../../tech/scripts/genxdut dig
+adut [clock
++ RST
++ COMP
++ ]
++ [RESET
++ CLK_EN
++ OUT_COMP
++ ] null dut
+.model dut d_cosim simulation="../dig.so" delay=10p
+
+* Inputs
+Rsvi0 clock 0 1G
+Rsvi1 RST 0 1G
+Rsvi2 COMP 0 1G
+
+* Outputs
+Rsvi3 RESET 0 1G
+Rsvi4 CLK_EN 0 1G
+Rsvi5 OUT_COMP 0 1G
+
+.save v(RESET)
+
+.save v(CLK_EN)
+
+.save v(OUT_COMP)
+

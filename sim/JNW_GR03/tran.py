@@ -1,17 +1,10 @@
 #!/usr/bin/env python3
 import pandas as pd
 import yaml
-<<<<<<< HEAD
-
-def main(name):
-  # Delete next line if you want to use python post processing
-  return
-=======
 import matplotlib.pyplot as plt
 
 def main(name):
   # Delete next line if you want to use python post processing
->>>>>>> main
   yamlfile = name + ".yaml"
 
   # Read result yaml file
@@ -19,12 +12,6 @@ def main(name):
     obj = yaml.safe_load(fi)
 
   # Do something to parameters
-<<<<<<< HEAD
-
-  # Save new yaml file
-  with open(yamlfile,"w") as fo:
-    yaml.dump(obj,fo)
-=======
   fname = name + ".png"
   print(f"Saving {fname}")
 
@@ -46,4 +33,3 @@ def main(name):
   plt.show()
   return
 
->>>>>>> main

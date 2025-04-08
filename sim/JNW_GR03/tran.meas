@@ -1,34 +1,21 @@
-<<<<<<< HEAD
-* Measure JNW_GR03_TB
-=======
+
 * Measure JNW_GR03
->>>>>>> main
 .control
 
 load {cicname}.raw
 
 echo "MEAS_START"
 
-<<<<<<< HEAD
-foreach vtemp -25 0 25 50 75 100
-=======
 foreach vtemp -25 0 25 50 75 100 120
->>>>>>> main
 
     echo "LINE_SHIFT"
     echo "LINE_SHIFT"
     set fend = .raw
     load {cicname}_$vtemp$fend
 
-<<<<<<< HEAD
-    meas tran i_temp$vtemp find i(VSENS) at=1000u
-
-=======
-    meas tran V_OUT$vtemp find v(V_OUT) at=10u
-    meas tran V_COMP$vtemp find v(V_COMP) at=10u
-    meas tran V_REF$vtemp find v(V_REF) at=10u
-    meas tran t_OUT$vtemp when v(V_OUT)=v(V_REF) CROSS=LAST
->>>>>>> main
+    meas tran OUT$vtemp find v(OUT) at=10u
+    meas tran COMP$vtemp find v(COMP) at=10u
+    
 end
 
 echo "MEAS_END"
