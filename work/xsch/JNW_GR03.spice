@@ -1,45 +1,145 @@
 ** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03.sch
-**.subckt JNW_GR03 VDD VSS I_TEMP
+.subckt JNW_GR03 VDD VSS OUT COMP REF CLK B0 B1 B2 B3 B4 B5 B6 B7 RESET CLK_EN OUT_COMP
+*.ipin VDD
+*.ipin VSS
+*.opin OUT
+*.opin COMP
+*.opin REF
+*.ipin CLK
+*.opin B0
+*.opin B1
+*.opin B2
+*.opin B3
+*.opin B4
+*.opin B5
+*.opin B6
+*.opin B7
+*.ipin RESET
+*.ipin CLK_EN
+*.ipin OUT_COMP
+x1 VDD net1 VSS JNW_GR03_IvsT
+x2 VDD net1 REF COMP OUT RESET VSS JNW_GR03_tvsI
+x3 VDD net2 OUT_COMP VSS B1 B2 B0 B7 B3 B4 B6 B5 RESET JNW_GR03_DigitalControl
+x4 VDD net3 CLK CLK_EN VSS JNW_GR03_NAND
+x5 VDD net2 net3 net3 VSS JNW_GR03_NAND
+.ends
+
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_IvsT.sym # of pins=3
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_IvsT.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_IvsT.sch
+.subckt JNW_GR03_IvsT VDD I_TEMP VSS
 *.ipin VDD
 *.ipin VSS
 *.opin I_TEMP
-x4 GS2 VR1 VSS JNWTR_RPPO4
-x5<1> VD1 net1 VDD VDD JNWATR_PCH_4C5F0
-x5<0> VD1 net1 VDD VDD JNWATR_PCH_4C5F0
-x2<1> VR1 net1 VDD VDD JNWATR_PCH_4C5F0
-x2<0> VR1 net1 VDD VDD JNWATR_PCH_4C5F0
-x6<1> net1 net1 VDD VDD JNWATR_PCH_4C5F0
-x6<0> net1 net1 VDD VDD JNWATR_PCH_4C5F0
-x7 net1 net2 VSS VSS JNWATR_NCH_4C5F0
-x8 VSS net2 JNWTR_CAPX1
-x1<1> I_TEMP net1 VDD VDD JNWATR_PCH_4C5F0
-x1<0> I_TEMP net1 VDD VDD JNWATR_PCH_4C5F0
-x3<1> VD1 VD1 VSS VSS JNWATR_NCH_4C5F0
-x3<0> VD1 VD1 VSS VSS JNWATR_NCH_4C5F0
-x11 GS2 GS2 VSS VSS JNWATR_NCH_4C5F0
-x9 VDD net2 net3 net4 VSS JNW_GR03_AMP
-**.ends
-
-* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RPPO4.sym # of pins=3
-** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO4.sym
-** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO4.sch
-.subckt JNWTR_RPPO4 N P B
-*.iopin P
-*.iopin N
-*.iopin B
-XXA1 N P B JNWTR_RES4
+x4 GS2 VR1 VSS JNWTR_RPPO8
+x5<2> VD1 I_TEMP VDD VDD JNWATR_PCH_2C5F0
+x5<1> VD1 I_TEMP VDD VDD JNWATR_PCH_2C5F0
+x5<0> VD1 I_TEMP VDD VDD JNWATR_PCH_2C5F0
+x<2> VR1 I_TEMP VDD VDD JNWATR_PCH_2C5F0
+x<1> VR1 I_TEMP VDD VDD JNWATR_PCH_2C5F0
+x<0> VR1 I_TEMP VDD VDD JNWATR_PCH_2C5F0
+x3 VD1 VD1 VSS VSS JNWATR_NCH_4C5F0
+x11<5> GS2 GS2 VSS VSS JNWATR_NCH_4C5F0
+x11<4> GS2 GS2 VSS VSS JNWATR_NCH_4C5F0
+x11<3> GS2 GS2 VSS VSS JNWATR_NCH_4C5F0
+x11<2> GS2 GS2 VSS VSS JNWATR_NCH_4C5F0
+x11<1> GS2 GS2 VSS VSS JNWATR_NCH_4C5F0
+x11<0> GS2 GS2 VSS VSS JNWATR_NCH_4C5F0
+x9 VDD I_TEMP VR1 VD1 VSS JNW_GR03_AMP
+x2<1> I_TEMP VSS JNWTR_CAPX1
+x2<0> I_TEMP VSS JNWTR_CAPX1
 .ends
 
 
-* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym # of pins=4
-** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym
-** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sch
-.subckt JNWATR_PCH_4C5F0 D G S B
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_tvsI.sym # of pins=7
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_tvsI.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_tvsI.sch
+.subckt JNW_GR03_tvsI VDD I_IN VREF COMP OUT RESET VSS
+*.ipin I_IN
+*.ipin VDD
+*.ipin VSS
+*.ipin RESET
+*.opin OUT
+*.opin COMP
+*.opin VREF
+x2 OUT RESET VSS VSS JNWATR_NCH_4C5F0
+x6<0> OUT I_IN VDD VDD JNWATR_PCH_2C5F0
+x1<4> OUT VSS JNWTR_CAPX4
+x1<3> OUT VSS JNWTR_CAPX4
+x1<2> OUT VSS JNWTR_CAPX4
+x1<1> OUT VSS JNWTR_CAPX4
+x1<0> OUT VSS JNWTR_CAPX4
+x3 VDD COMP OUT VREF VSS JNW_GR03_AMP
+x4 VREF VDD VSS JNWTR_RPPO16
+x5 VSS VREF VSS JNWTR_RPPO16
+.ends
+
+
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_DigitalControl.sym # of pins=13
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_DigitalControl.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_DigitalControl.sch
+.subckt JNW_GR03_DigitalControl VDD CLK OUT_COMP VSS B1 B2 B0 B7 B3 B4 B6 B5 RESET
+*.ipin VDD
+*.ipin VSS
+*.ipin OUT_COMP
+*.ipin CLK
+*.opin B0
+*.opin B1
+*.opin B2
+*.opin B3
+*.opin B4
+*.opin B5
+*.opin B6
+*.opin B7
+*.ipin RESET
+x1 VDD CLK RESET VSS net2 net3 net6 net5 net4 net7 net8 net1 JNW_GR03_8BCOUNTER
+x5 VDD net1 B0 net9 OUT_COMP VSS JNW_GR03_DLATCH
+x6 VDD net8 B1 net10 OUT_COMP VSS JNW_GR03_DLATCH
+x7 VDD net2 B2 net11 OUT_COMP VSS JNW_GR03_DLATCH
+x8 VDD net3 B3 net12 OUT_COMP VSS JNW_GR03_DLATCH
+x9 VDD net4 B4 net13 OUT_COMP VSS JNW_GR03_DLATCH
+x10 VDD net5 B5 net14 OUT_COMP VSS JNW_GR03_DLATCH
+x11 VDD net6 B6 net15 OUT_COMP VSS JNW_GR03_DLATCH
+x12 VDD net7 B7 net16 OUT_COMP VSS JNW_GR03_DLATCH
+.ends
+
+
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_NAND.sym # of pins=5
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_NAND.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_NAND.sch
+.subckt JNW_GR03_NAND VDD Y A B VSS
+*.ipin VDD
+*.ipin VSS
+*.ipin B
+*.ipin A
+*.opin Y
+x1 Y A net1 VSS JNWATR_NCH_4C5F0
+x2 net1 B VSS VSS JNWATR_NCH_4C5F0
+x3 Y A VDD VDD JNWATR_PCH_4C5F0
+x4 Y B VDD VDD JNWATR_PCH_4C5F0
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RPPO8.sym # of pins=3
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO8.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO8.sch
+.subckt JNWTR_RPPO8 N P B
+*.iopin P
+*.iopin N
+*.iopin B
+XXA1 N P B JNWTR_RES8
+.ends
+
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym # of pins=4
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_2C5F0.sch
+.subckt JNWATR_PCH_2C5F0 D G S B
 *.iopin D
 *.iopin G
 *.iopin S
 *.iopin B
-XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.94 W=1.92 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
 + ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 .ends
 
@@ -57,6 +157,31 @@ XM1 D G S B sky130_fd_pr__nfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf *
 .ends
 
 
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_AMP.sym # of pins=5
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_AMP.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_AMP.sch
+.subckt JNW_GR03_AMP VDD Vo Vip Vin VSS
+*.ipin Vin
+*.ipin Vip
+*.opin Vo
+*.ipin VSS
+*.ipin VDD
+x2 net2 Vin net1 net1 JNWATR_PCH_4C1F2
+x1 net3 Vip net1 net1 JNWATR_PCH_4C1F2
+x3 net3 net3 VSS VSS JNWATR_NCH_4C5F0
+x4 net2 net2 VSS VSS JNWATR_NCH_4C5F0
+x6 Vo net3 VSS VSS JNWATR_NCH_4C5F0
+x8 net4 net2 VSS VSS JNWATR_NCH_4C5F0
+x7<0> net4 net4 VDD VDD JNWATR_PCH_4C5F0
+x5<0> Vo net4 VDD VDD JNWATR_PCH_4C5F0
+x9<1> net5 net5 VDD VDD JNWATR_PCH_4C5F0
+x9<0> net5 net5 VDD VDD JNWATR_PCH_4C5F0
+x8<0> net1 net5 VDD VDD JNWATR_PCH_4C5F0
+x11 net6 net5 VSS JNWTR_RPPO2
+x12 VSS net6 VSS JNWTR_RPPO16
+.ends
+
+
 * expanding   symbol:  JNW_TR_SKY130A/JNWTR_CAPX1.sym # of pins=2
 ** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX1.sym
 ** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX1.sch
@@ -67,46 +192,103 @@ XC1 B A sky130_fd_pr__cap_mim_m3_1 W=5 L=5 MF=1 m=1
 .ends
 
 
-* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_AMP.sym # of pins=5
-** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_AMP.sym
-** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_AMP.sch
-.subckt JNW_GR03_AMP VDD VO VIP VIN VSS
-*.ipin VIN
-*.ipin VIP
-*.ipin VSS
-*.ipin VDD
-*.opin VO
-x2 net2 VIN net1 net1 JNWATR_PCH_4C1F2
-x1 net3 VIP net1 net1 JNWATR_PCH_4C1F2
-x3 net3 net3 VSS VSS JNWATR_NCH_4C5F0
-x4 net2 net2 VSS VSS JNWATR_NCH_4C5F0
-x10 VO net3 VSS VSS JNWATR_NCH_4C5F0
-x8 net4 net2 VSS VSS JNWATR_NCH_4C5F0
-x7<1> net4 net4 VDD VDD JNWATR_PCH_4C5F0
-x7<0> net4 net4 VDD VDD JNWATR_PCH_4C5F0
-x9<1> VO VO VDD VDD JNWATR_PCH_4C5F0
-x9<0> VO VO VDD VDD JNWATR_PCH_4C5F0
-x1<1> net7<1> net5<1> VDD VDD JNWATR_PCH_4C5F0
-x1<0> net7<0> net5<0> VDD VDD JNWATR_PCH_4C5F0
-x5<1> net1 net5<1> VDD VDD JNWATR_PCH_4C5F0
-x5<0> net1 net5<0> VDD VDD JNWATR_PCH_4C5F0
-x9 VSS net6 VSS JNWTR_RPPO4
-x12<0> net6 net7<1> VSS JNWTR_RPPO2
-x12<1> net6 net7<0> VSS JNWTR_RPPO2
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_CAPX4.sym # of pins=2
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX4.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_CAPX4.sch
+.subckt JNWTR_CAPX4 A B
+*.iopin A
+*.iopin B
+XXA1 A B JNWTR_CAPX1
+XXA2 A B JNWTR_CAPX1
+XXB1 A B JNWTR_CAPX1
+XXB2 A B JNWTR_CAPX1
 .ends
 
 
-* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RES4.sym # of pins=3
-** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RES4.sym
-** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RES4.sch
-.subckt JNWTR_RES4 N P B
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RPPO16.sym # of pins=3
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO16.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RPPO16.sch
+.subckt JNWTR_RPPO16 N P B
+*.iopin P
+*.iopin N
+*.iopin B
+XXA1 N P B JNWTR_RES16
+.ends
+
+
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_8BCOUNTER.sym # of pins=12
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_8BCOUNTER.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_8BCOUNTER.sch
+.subckt JNW_GR03_8BCOUNTER VDD CLK RST VSS B2 B3 B6 B5 B4 B7 B1 B0
+*.ipin VDD
+*.ipin VSS
+*.ipin CLK
+*.opin B0
+*.opin B1
+*.opin B2
+*.opin B3
+*.opin B4
+*.opin B5
+*.opin B6
+*.opin B7
+*.ipin RST
+x7 VDD B7 net8 B6 net8 RST VSS JNW_GR03_DFLIPFLOP_F_R
+x6 VDD B6 net7 B5 net7 RST VSS JNW_GR03_DFLIPFLOP_F_R
+x5 VDD B5 net6 B4 net6 RST VSS JNW_GR03_DFLIPFLOP_F_R
+x4 VDD B4 net5 B3 net5 RST VSS JNW_GR03_DFLIPFLOP_F_R
+x3 VDD B3 net4 B2 net4 RST VSS JNW_GR03_DFLIPFLOP_F_R
+x2 VDD B2 net3 B1 net3 RST VSS JNW_GR03_DFLIPFLOP_F_R
+x1 VDD B1 net2 B0 net2 RST VSS JNW_GR03_DFLIPFLOP_F_R
+x8 VDD B0 net1 CLK net1 RST VSS JNW_GR03_DFLIPFLOP_F_R
+.ends
+
+
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_DLATCH.sym # of pins=6
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_DLATCH.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_DLATCH.sch
+.subckt JNW_GR03_DLATCH VDD D Q NOT_Q E VSS
+*.ipin VDD
+*.ipin VSS
+*.ipin E
+*.ipin D
+*.opin Q
+*.opin NOT_Q
+x1 VDD net3 D E VSS JNW_GR03_NAND
+x2 VDD net2 net1 E VSS JNW_GR03_NAND
+x3 VDD D net1 VSS JNW_GR03_NOT
+x4 VDD Q net3 NOT_Q VSS JNW_GR03_NAND
+x5 VDD NOT_Q Q net2 VSS JNW_GR03_NAND
+.ends
+
+
+* expanding   symbol:  JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym # of pins=4
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_ATR_SKY130A/JNWATR_PCH_4C5F0.sch
+.subckt JNWATR_PCH_4C5F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.94 W=3.2 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RES8.sym # of pins=3
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RES8.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RES8.sch
+.subckt JNWTR_RES8 N P B
 *.iopin N
 *.iopin P
 *.iopin B
 XR1_0 INT_0 N B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
 XR1_1 INT_1 INT_0 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
 XR1_2 INT_2 INT_1 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
-XR1_3 P INT_2 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_3 INT_3 INT_2 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_4 INT_4 INT_3 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_5 INT_5 INT_4 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_6 INT_6 INT_5 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_7 P INT_6 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
 .ends
 
 
@@ -134,6 +316,67 @@ XXA1 N P B JNWTR_RES2
 .ends
 
 
+* expanding   symbol:  JNW_TR_SKY130A/JNWTR_RES16.sym # of pins=3
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RES16.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RES16.sch
+.subckt JNWTR_RES16 N P B
+*.iopin N
+*.iopin P
+*.iopin B
+XR1_0 INT_0 N B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_1 INT_1 INT_0 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_2 INT_2 INT_1 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_3 INT_3 INT_2 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_4 INT_4 INT_3 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_5 INT_5 INT_4 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_6 INT_6 INT_5 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_7 INT_7 INT_6 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_8 INT_8 INT_7 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_9 INT_9 INT_8 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_10 INT_10 INT_9 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_11 INT_11 INT_10 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_12 INT_12 INT_11 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_13 INT_13 INT_12 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_14 INT_14 INT_13 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+XR1_15 P INT_14 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_DFLIPFLOP_F_R.sym # of pins=7
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_DFLIPFLOP_F_R.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_DFLIPFLOP_F_R.sch
+.subckt JNW_GR03_DFLIPFLOP_F_R VDD Q NOT_Q CLK D RST VSS
+*.opin Q
+*.ipin RST
+*.ipin CLK
+*.ipin VSS
+*.ipin D
+*.opin NOT_Q
+*.ipin VDD
+x1 VDD net1 net4 net2 VSS JNW_GR03_NAND
+x8 VDD Q net2 NOT_Q VSS JNW_GR03_NAND
+x2 VDD net1 net6 net2 net5 VSS JNW_GR03_NAND3
+x3 VDD net2 net5 net3 net4 VSS JNW_GR03_NAND3
+x4 VDD net3 D net4 net6 VSS JNW_GR03_NAND3
+x5 VDD Q net3 NOT_Q net6 VSS JNW_GR03_NAND3
+x6 VDD RST net6 VSS JNW_GR03_NOT
+x7 VDD CLK net5 VSS JNW_GR03_NOT
+.ends
+
+
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_NOT.sym # of pins=4
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_NOT.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_NOT.sch
+.subckt JNW_GR03_NOT VDD X Y VSS
+*.ipin VDD
+*.ipin X
+*.ipin VSS
+*.opin Y
+x1 Y X VSS VSS JNWATR_NCH_4C5F0
+x2 Y X VDD VDD JNWATR_PCH_4C5F0
+.ends
+
+
 * expanding   symbol:  JNW_TR_SKY130A/JNWTR_RES2.sym # of pins=3
 ** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RES2.sym
 ** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_TR_SKY130A/JNWTR_RES2.sch
@@ -143,6 +386,22 @@ XXA1 N P B JNWTR_RES2
 *.iopin B
 XR1_0 INT_0 N B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
 XR1_1 P INT_0 B sky130_fd_pr__res_high_po W=0.36 L=7.36 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  JNW_GR03_SKY130A/JNW_GR03_NAND3.sym # of pins=6
+** sym_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_NAND3.sym
+** sch_path: /home/toushif/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_GR03_SKY130A/JNW_GR03_NAND3.sch
+.subckt JNW_GR03_NAND3 VDD A B Y C VSS
+*.ipin VDD
+*.opin Y
+*.ipin VSS
+*.ipin A
+*.ipin B
+*.ipin C
+x1 VDD net1 A B VSS JNW_GR03_NAND
+x2 VDD net2 net1 net1 VSS JNW_GR03_NAND
+x3 VDD Y net2 C VSS JNW_GR03_NAND
 .ends
 
 .end
