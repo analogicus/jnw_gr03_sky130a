@@ -15,6 +15,6 @@ LIB=JNW_GR03_SKY130A
 CELL=JNW_GR03
 
 #- Provide cells you want to check for the lvsall drcall commands
-CELLS = JNW_GR03
+CELLS = JNW_GR03_NOT
 
 include ../tech/make/core.make

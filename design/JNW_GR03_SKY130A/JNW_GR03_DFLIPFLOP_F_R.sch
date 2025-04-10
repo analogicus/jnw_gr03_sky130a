@@ -9,7 +9,6 @@ N 230 -260 230 -200 {lab=#net1}
 N 230 -140 230 -80 {lab=#net2}
 N -30 -190 230 -140 {lab=#net2}
 N -30 -240 -30 -190 {lab=#net2}
-N -30 -240 20 -240 {lab=#net2}
 N 230 -80 230 -20 {lab=#net2}
 N -30 110 230 -20 {lab=#net2}
 N 230 170 230 240 {lab=#net3}
@@ -33,7 +32,6 @@ N 240 440 280 440 {lab=#net4}
 N 280 -340 280 440 {lab=#net4}
 N -30 -340 280 -340 {lab=#net4}
 N -30 -340 -30 -280 {lab=#net4}
-N -30 -280 20 -280 {lab=#net4}
 N -500 -430 90 -430 {lab=VDD}
 N 90 -430 90 -310 {lab=VDD}
 N 90 -430 680 -430 {lab=VDD}
@@ -114,6 +112,8 @@ N -680 720 -490 720 {lab=VSS}
 N -490 660 -490 720 {lab=VSS}
 N -600 -340 -600 80 {lab=VDD}
 N -600 -340 -430 -340 {lab=VDD}
+N -30 -240 20 -280 {lab=#net2}
+N -30 -280 20 -240 {lab=#net4}
 C {devices/opin.sym} 900 -60 0 0 {name=p2 lab=Q}
 C {devices/ipin.sym} -580 600 0 0 {name=p3 lab=RST}
 C {devices/ipin.sym} -740 120 0 0 {name=p4 lab=CLK}

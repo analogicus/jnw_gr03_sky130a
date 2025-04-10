@@ -1,0 +1,78 @@
+magic
+tech sky130A
+timestamp 1744282624
+<< error_s >>
+rect 660 1691 663 1694
+rect 657 1688 660 1691
+rect 657 1659 660 1662
+rect 660 1656 663 1659
+rect 488 1522 1248 1646
+<< locali >>
+rect 532 2113 1201 2119
+rect 532 2023 727 2113
+rect 817 2023 1201 2113
+rect 532 1035 628 2023
+rect 1105 1033 1201 2023
+rect 534 -45 630 941
+rect 1109 -45 1205 940
+rect 534 -48 1205 -45
+rect 534 -138 728 -48
+rect 818 -138 1205 -48
+rect 534 -141 1205 -138
+<< viali >>
+rect 727 2023 817 2113
+rect 728 -138 818 -48
+<< metal1 >>
+rect 724 2113 820 2119
+rect 724 2023 727 2113
+rect 817 2023 820 2113
+rect 660 827 692 1153
+rect 724 1111 820 2023
+rect 724 488 820 675
+rect 916 540 1012 1966
+rect 724 392 1013 488
+rect 664 309 696 312
+rect 664 274 696 277
+rect 725 -48 821 302
+rect 917 223 1013 392
+rect 725 -138 728 -48
+rect 818 -138 821 -48
+rect 725 -144 821 -138
+<< via1 >>
+rect 660 1659 692 1691
+rect 664 277 696 309
+<< metal2 >>
+rect 692 1659 892 1691
+rect 860 309 892 1659
+rect 661 277 664 309
+rect 696 277 892 309
+use JNWATR_NCH_4C5F0  x1 ../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 582 0 1 521
+box -92 -64 668 464
+use JNWATR_NCH_4C5F0  x2
+timestamp 1734044400
+transform 1 0 581 0 1 -10
+box -92 -64 668 464
+use JNWATR_PCH_4C5F0  x3 ../JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 580 0 1 1055
+box -92 -64 668 464
+use JNWATR_PCH_4C5F0  x4
+timestamp 1734044400
+transform 1 0 580 0 1 1586
+box -92 -64 668 464
+<< labels >>
+flabel space 529 2022 701 2119 0 FreeSans 800 0 0 0 VDD
+port 0 nsew
+flabel locali 1019 -139 1201 -47 0 FreeSans 800 0 0 0 VSS
+port 1 nsew
+flabel space 917 921 1014 1037 0 FreeSans 800 0 0 0 Y
+port 2 nsew
+flabel metal1 663 935 689 1028 0 FreeSans 800 0 0 0 A
+port 3 nsew
+flabel space 859 938 891 1023 0 FreeSans 800 0 0 0 B
+port 4 nsew
+<< properties >>
+string FIXED_BBOX 0 0 2304 400
+<< end >>
