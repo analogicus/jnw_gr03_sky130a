@@ -1,0 +1,9 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1744320150
+use JNW_GR03_IvsT  JNW_GR03_IvsT_0
+timestamp 1744320150
+transform 1 0 -1462 0 1 -198
+box -2836 -9 6406 9474
+<< end >>

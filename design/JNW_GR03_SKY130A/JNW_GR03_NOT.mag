@@ -1,0 +1,43 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1744287221
+<< locali >>
+rect 88 1148 1432 1164
+rect 88 972 478 1148
+rect 88 728 280 972
+rect 658 972 1432 1148
+rect 1240 760 1432 972
+rect 88 -964 280 -776
+rect 1240 -964 1432 -752
+rect 88 -968 1432 -964
+rect 88 -1148 478 -968
+rect 658 -1148 1432 -968
+rect 88 -1156 1432 -1148
+<< viali >>
+rect 478 968 658 1148
+rect 478 -1148 658 -968
+<< metal1 >>
+rect 472 1148 664 1160
+rect 472 968 478 1148
+rect 658 968 664 1148
+rect 472 548 664 968
+rect 344 36 408 232
+rect 88 -28 408 36
+rect 344 -244 408 -28
+rect 856 36 1048 460
+rect 856 -27 1433 36
+rect 856 -414 1048 -27
+rect 472 -968 664 -624
+rect 472 -1148 478 -968
+rect 658 -1148 664 -968
+rect 472 -1160 664 -1148
+use JNWATR_NCH_4C5F0  JNWATR_NCH_4C5F0_0 ~/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_ATR_SKY130A
+timestamp 1737385461
+transform 1 0 184 0 1 -928
+box -184 -128 1336 928
+use JNWATR_PCH_4C5F0  JNWATR_PCH_4C5F0_0 ~/pro/aicex/ip/jnw_gr03_sky130a/design/JNW_ATR_SKY130A
+timestamp 1734044400
+transform 1 0 184 0 1 128
+box -184 -128 1336 928
+<< end >>
