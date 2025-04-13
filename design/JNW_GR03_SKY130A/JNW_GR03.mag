@@ -1,9 +1,26 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1744320150
+timestamp 1744555067
+<< locali >>
+rect 2474 8965 6654 9285
+rect 5776 3330 6408 5749
+rect 4518 2698 6408 3330
+<< metal1 >>
+rect 2084 8024 2184 8030
+rect 2084 7918 2184 7924
+<< via1 >>
+rect 2084 7924 2184 8024
+<< metal2 >>
+rect 5450 8024 5550 8144
+rect 2078 7924 2084 8024
+rect 2184 7924 5550 8024
 use JNW_GR03_IvsT  JNW_GR03_IvsT_0
-timestamp 1744320150
+timestamp 1744555067
 transform 1 0 -1462 0 1 -198
 box -2836 -9 6406 9474
+use JNW_GR03_tvsI  JNW_GR03_tvsI_0
+timestamp 1744555067
+transform 1 0 6316 0 1 5483
+box -1780 -3986 10892 3802
 << end >>
